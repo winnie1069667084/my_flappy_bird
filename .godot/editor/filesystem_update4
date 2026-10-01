@@ -1,0 +1,10 @@
+res://Pipes/pipes.tscn
+res://Pipes/pipes.gd
+res://HUD/hud.tscn
+res://HUD/hud.gd
+res://Main/main.tscn
+res://Main/main.gd
+res://Bird/bird.tscn
+res://Bird/bird.gd
+res://BackGround/background_father.tscn
+res://BackGround/background_father.gd

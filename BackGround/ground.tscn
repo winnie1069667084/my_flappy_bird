@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bo000isefog7c"]
+
+[ext_resource type="PackedScene" uid="uid://c2g468b214q0d" path="res://BackGround/background_father.tscn" id="1_ygfqe"]
+[ext_resource type="Texture2D" uid="uid://b3wob7btvm53l" path="res://Assets/ground.png" id="2_br2o2"]
+
+[node name="Ground" unique_id=90916864 instance=ExtResource("1_ygfqe")]
+
+[node name="ParallaxLayer" parent="." index="0" unique_id=446904940]
+motion_mirroring = Vector2(900, 0)
+
+[node name="Sprite2D" parent="ParallaxLayer" index="0" unique_id=916908972]
+texture = ExtResource("2_br2o2")
+centered = false
+offset = Vector2(0, 700)

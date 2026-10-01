@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c2g468b214q0d"]
+
+[ext_resource type="Script" uid="uid://m2n0n5pdjnkx" path="res://BackGround/background_father.gd" id="1_d1rr6"]
+
+[node name="BackgroundFather" type="ParallaxBackground" unique_id=90916864]
+script = ExtResource("1_d1rr6")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=446904940]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=916908972]

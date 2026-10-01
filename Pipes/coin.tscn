@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://dw8fadxaje44x"]
+
+[ext_resource type="Texture2D" uid="uid://bqi4yqo7apx60" path="res://Assets/coin-frame-1.png" id="1_joiby"]
+[ext_resource type="Texture2D" uid="uid://74d3fbhi3cq6" path="res://Assets/coin-frame-2.png" id="2_f810v"]
+[ext_resource type="Texture2D" uid="uid://bdrfkuwohlhnr" path="res://Assets/coin-frame-3.png" id="3_3kype"]
+[ext_resource type="Texture2D" uid="uid://bclxsfe34a3l5" path="res://Assets/coin-frame-4.png" id="4_1qlk1"]
+[ext_resource type="Texture2D" uid="uid://tal3u5wn7brw" path="res://Assets/coin-frame-5.png" id="5_82mg3"]
+[ext_resource type="Texture2D" uid="uid://br1xowqhhajfc" path="res://Assets/coin-frame-6.png" id="6_dynfs"]
+[ext_resource type="Texture2D" uid="uid://c60dmxo583vf4" path="res://Assets/coin-frame-7.png" id="7_m3sis"]
+[ext_resource type="Texture2D" uid="uid://cxsyfwq8auwfl" path="res://Assets/coin-frame-8.png" id="8_lgeo0"]
+[ext_resource type="Texture2D" uid="uid://byl6nyaotilxj" path="res://Assets/coin-frame-9.png" id="9_wteep"]
+[ext_resource type="Texture2D" uid="uid://dck2kyh6f6kha" path="res://Assets/coin-frame-10.png" id="10_2dbp4"]
+[ext_resource type="Texture2D" uid="uid://cftkkqh8uxju2" path="res://Assets/coin-frame-11.png" id="11_swo8b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kovln"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_joiby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f810v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3kype")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1qlk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_82mg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dynfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m3sis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lgeo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wteep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2dbp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_swo8b")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 11.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kovln"]
+radius = 14.999998
+
+[sub_resource type="Animation" id="Animation_joiby"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.3, 0.3), Vector2(0.8, 0.8)]
+}
+
+[sub_resource type="Animation" id="Animation_f810v"]
+resource_name = "coin"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.3, 0.3), Vector2(0.8, 0.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3kype"]
+_data = {
+&"RESET": SubResource("Animation_joiby"),
+&"coin": SubResource("Animation_f810v")
+}
+
+[node name="Coin" type="Area2D" unique_id=452474173]
+scale = Vector2(0.8, 0.8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=321791208]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_kovln")
+autoplay = "default"
+frame = 8
+frame_progress = 0.4842824
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=764029948]
+shape = SubResource("CircleShape2D_kovln")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=43153692]
+libraries/ = SubResource("AnimationLibrary_3kype")

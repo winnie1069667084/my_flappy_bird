@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://h0tg5x2p0ofj"]
+
+[ext_resource type="PackedScene" uid="uid://dj4vnhjo4a1vd" path="res://Pipes/pipe.tscn" id="1_1ynq3"]
+[ext_resource type="Script" uid="uid://cjrwbxc767jhs" path="res://Pipes/pipes.gd" id="1_uftkg"]
+[ext_resource type="PackedScene" uid="uid://dw8fadxaje44x" path="res://Pipes/coin.tscn" id="2_v0eoh"]
+
+[node name="Pipes" type="Node2D" unique_id=567054881]
+script = ExtResource("1_uftkg")
+
+[node name="pipe_bottom" parent="." unique_id=1643091883 instance=ExtResource("1_1ynq3")]
+position = Vector2(0, 90)
+
+[node name="pipe_top" parent="." unique_id=494929029 instance=ExtResource("1_1ynq3")]
+position = Vector2(0, -90)
+rotation = 3.1415927
+
+[node name="Coin" parent="." unique_id=452474173 instance=ExtResource("2_v0eoh")]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1589537060]

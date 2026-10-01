@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://8ugdc3cvuj5a"]
+
+[ext_resource type="Script" uid="uid://d6mhu1a3pdi6" path="res://Bird/bird.gd" id="1_rg4uy"]
+[ext_resource type="Texture2D" uid="uid://bihbkg7ud8hcl" path="res://Assets/bird1.png" id="1_teae3"]
+[ext_resource type="Texture2D" uid="uid://caavwymrm56gm" path="res://Assets/bird2.png" id="2_rg4uy"]
+[ext_resource type="Texture2D" uid="uid://bi8e50d2hcuo0" path="res://Assets/bird3.png" id="3_2vl2o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tneba"]
+radius = 17.117243
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kovln"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_teae3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rg4uy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2vl2o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_kovln"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.5044248), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_4p6lw"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[node name="Bird" type="CharacterBody2D" unique_id=536523067 groups=["bird"]]
+script = ExtResource("1_rg4uy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=525918372]
+texture = ExtResource("1_teae3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1765384525 groups=["bird"]]
+shape = SubResource("CircleShape2D_tneba")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1445600182]
+sprite_frames = SubResource("SpriteFrames_kovln")
+autoplay = "default"
+frame_progress = 0.41074222
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=2023196648]
+show_behind_parent = true
+emitting = false
+texture = ExtResource("1_teae3")
+lifetime = 0.2
+direction = Vector2(-1, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 150.0
+scale_amount_curve = SubResource("Curve_kovln")
+color_ramp = SubResource("Gradient_4p6lw")
+
+[node name="FlySound" type="AudioStreamPlayer2D" parent="." unique_id=513716478]
+
+[node name="ScoreSound" type="AudioStreamPlayer2D" parent="." unique_id=390318988]
